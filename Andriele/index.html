@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Família ♡</title>
+    <link rel="stylesheet" href="style2.css">
+
+</head>
+
+<body>
+
+    <h1>Minha Família ♡</h1>
+
+    <div class="caixa">
+        <h2>Sobre nós</h2>
+        <p>Minha família é muito importante para mim e composta por pessoas incríveis.</p>
+        <p>A união e o carinho sempre estiveram presentes na nossa história.</p>
+        <p>A seguir, você verá nomes, curiosidades e mensagens especiais.</p>
+    </div>
+
+    <div class="caixa">
+        <h2>Lista de familiares ♡</h2>
+        <ul id="listaFamilia"></ul>
+    </div>
+
+    <div class="caixa">
+        <h2>Galeria ♡</h2>
+        <div>
+            <img src="1.jpg" alt="Minha foto" class="comida" />
+            <img src="euemae.jpeg" alt="Minha foto" class="casa" />
+            <img src="3.jpeg" alt="Minha foto" class="cavalo" />
+            <img src="euepai.jpeg" alt="Minha foto" class="pai" />
+           <img src="pai.jpeg" alt="Minha foto" class="paii" />
+
+        </div>
+    </div>
+
+    <div class="caixa">
+        <h2>Mensagem Especial</h2>
+        <button class="botao" onclick="mostrarMensagem()">Mostrar / Ocultar mensagem</button>
+        <p id="msg" class="mensagem-especial" style="display:none;">
+            Minha família é meu maior amor! 💗
+        </p>
+    </div>
+
+    <div class="caixa">
+        <h2>Escolha um familiar ♡</h2>
+        <button class="botao" onclick="escolherMensagem()">Escolher Pessoa</button>
+        <p id="msgFamiliar"></p>
+    </div>
+
+    <div class="caixa">
+        <h2>Área interativa</h2>
+        <p id="hoverArea" onmouseover="trocarTexto()" onmouseout="voltarTexto()">
+            Passe o mouse aqui!
+        </p>
+    </div>
+
+    <script src="script.js">
+
+    </script>
+
+</body>
+
+</html>

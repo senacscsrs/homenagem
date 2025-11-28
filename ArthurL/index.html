@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homenagem à Nossa Família</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="hero-header">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Nossa Família Especial</h1>
+                <p class="hero-subtitle">Uma homenagem aos momentos que vivemos juntos</p>
+                <div class="hero-divider"></div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="section-intro">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">Sobre Nossa Família</h2>
+                </div>
+                <div class="content-grid">
+                    <div class="intro-card">
+                        <div class="card-icon">🏡</div>
+                        <p>Somos uma família unida que valoriza cada momento compartilhado. Ao longo dos anos, construímos memórias incríveis que guardaremos para sempre em nossos corações.</p>
+                    </div>
+                    <div class="intro-card">
+                        <div class="card-icon">✈️</div>
+                        <p>Gostamos de viajar juntos e explorar novos lugares. Cada viagem é uma oportunidade de fortalecer nossos laços e criar histórias que contaremos por gerações.</p>
+                    </div>
+                    <div class="intro-card">
+                        <div class="card-icon">❤️</div>
+                        <p>Valorizamos o respeito, o amor e a compreensão mútua. Esses são os pilares que sustentam nossa família e nos tornam mais fortes a cada dia.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-members">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">Membros da Família</h2>
+                </div>
+                <ul id="lista-membros" class="members-list">
+                </ul>
+            </section>
+
+            <section class="section-moments">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">Momentos Especiais</h2>
+                </div>
+                <ol id="lista-momentos" class="moments-list">
+                </ol>
+            </section>
+
+            <section class="section-gallery">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">Galeria de Memórias</h2>
+                </div>
+                <div class="gallery-container">
+                    <div class="image-frame">
+                        <img src="familia.jpg" alt="Foto da família reunida" id="foto-familia">
+                    </div>
+                    <p class="image-caption">Momentos inesquecíveis em família</p>
+                </div>
+            </section>
+
+            <section class="section-interactive">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2 class="section-title">Área Interativa</h2>
+                </div>
+                
+                <div class="interactive-grid">
+                    <div class="interactive-card">
+                        <h3 class="card-title">Mensagem Especial</h3>
+                        <button onclick="toggleMensagem()" class="btn-modern">
+                            <span class="btn-text">Mostrar/Ocultar Mensagem</span>
+                        </button>
+                        <p id="mensagem-especial" class="special-message hidden">❤️ Família é o nosso maior tesouro! ❤️</p>
+                    </div>
+
+                    <div class="interactive-card">
+                        <h3 class="card-title">Tema do Site</h3>
+                        <button onclick="trocarCores()" class="btn-modern">
+                            <span class="btn-text">Alternar Tema Claro/Escuro</span>
+                        </button>
+                    </div>
+
+                    <div class="interactive-card full-width">
+                        <h3 class="card-title">Escolha um Familiar</h3>
+                        <div class="select-wrapper">
+                            <select id="select-familiar" onchange="mostrarMensagemFamiliar()" class="custom-select">
+                                <option value="">Selecione um membro...</option>
+                                <option value="Arthur">Arthur</option>
+                                <option value="Gabriel">Gabriel</option>
+                                <option value="Marcia">Marcia</option>
+                                <option value="Thiago">Thiago</option>
+                            </select>
+                        </div>
+                        <div id="mensagem-familiar" class="family-message"></div>
+                    </div>
+
+                    <div class="interactive-card">
+                        <h3 class="card-title">Perfil Detalhado</h3>
+                        <button onclick="mostrarDadosArthur()" class="btn-modern">
+                            <span class="btn-text">Ver Dados de Arthur</span>
+                        </button>
+                        <div id="dados-arthur" class="profile-data"></div>
+                    </div>
+
+                    <div class="interactive-card hover-card">
+                        <div class="hover-content" onmouseover="mudarTextoHover()" onmouseout="restaurarTextoHover()">
+                            <p id="texto-hover" class="hover-text">Passe o mouse aqui para ver uma surpresa!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-table">
+                <div class="section-header">
+                    <span class="section-number">06</span>
+                    <h2 class="section-title">Tabela da Família</h2>
+                </div>
+                <div id="tabela-container" class="table-wrapper"></div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2025 - Família com Amor</p>
+                <div class="footer-divider"></div>
+                <p class="footer-tagline">Criado com carinho e dedicação</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

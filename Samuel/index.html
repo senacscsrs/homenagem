@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Família</title>
+  <style>
+    body {
+      background-color: lightblue;
+      font-family: Arial, sans-serif;
+    }
+    .titulo {
+      color: darkblue;
+      font-weight: bold;
+      font-size: 28px;
+    }
+    .texto {
+      font-size: 18px;
+      color: black;
+    }
+    .lista {
+      background-color: white;
+      padding: 15px;
+      border-radius: 6px;
+      display: inline-block;
+      width: fit-content;
+    }
+    .lista li { margin-bottom: 10px; }
+    h1, h2 { text-align: center; }
+    h3 { text-align: left; }
+    .bl1 {
+      display: block;
+      margin: 0 auto;
+      width: 300px;
+    }
+    ul li { margin-bottom: 10px; }
+    .botao {
+      font-weight: bold;
+      font-size: 18px;
+      padding: 12px 24px;
+      background-color: white;
+      border: 2px solid darkblue;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    .botao:hover { background-color: lightgray; }
+    #resposta { transition: all 0.3s ease; }
+  </style>
+</head>
+<body>
+  <h1 class="titulo">Minha família</h1>
+  <p >A minha família é uma das coisas mais importantes para mim. São pessoas que eu admiro e tenho muito carinho, e nosso bom convívio sempre nos mantém unidos</p>
+   <p >Temos muitas boas lembranças juntos, até mais do que eu possa lembrar. Com cada um, foram momentos especiais que me fizeram rir, me emocionar e também aprender coisas novas.</p>
+    <p >Além disso, recebi os melhores conselhos que já ouvi, vindos justamente deles. Esses ensinamentos me ajudam a crescer e reforçam ainda mais o valor que minha família tem na minha vida.</p>
+
+  <h2 class="titulo">Uma foto de todos nós</h2>
+  <img src="fm.jpeg" alt="Imagem para bloco de 300px" class="bl1">
+
+  <h3 class="titulo">Lista do que eu gosto de fazer com eles</h3>
+  <ul class="lista">
+    <li>Assistir filmes com minha mãe</li>
+    <li>Cozinhar com minha vó</li>
+    <li>Passear com meu tio</li>
+    <li>Conversar com meu vô</li>
+    <li>Jogar videogame com meu primo</li>
+  </ul>
+
+  <h4 class="titulo">Sabe qual time de futebol torcemos?</h4>
+  <button class="botao" onclick="mostrarResposta()">Resposta</button>
+  <p id="resposta" style="display:none; color:red; font-size:32px; font-weight:bold;">Internacional</p>
+
+  <h5 class="titulo">Escolha uma mensagem para receber um presente</h5>
+  <button class="botao" onclick="mostrarMensagem(1)">Mensagem 1</button>
+  <button class="botao" onclick="mostrarMensagem(2)">Mensagem 2</button>
+  <button class="botao" onclick="mostrarMensagem(3)">Mensagem 3</button>
+  <p id="mensagem" style="color:darkred; font-size:24px; font-weight:bold;"></p>
+
+  <h6 class="titulo">Todos da minha família</h6>
+  <button class="botao" onclick="mostrarFamilia()">Mostrar Família</button>
+  <p id="familia" style="color:darkblue; font-size:20px; font-weight:bold;"></p>
+
+    <h6 class="titulo">Botão para mostrar os mais jovens até 30 anos</h6>
+    <button class="botao" onclick="mostrarJovens()">Mostrar Jovens</button>
+    <p id="jovens" style="color:green; font-size:20px; font-weight:bold;"></p>
+
+  <script>
+    function mostrarResposta() {
+      var texto = document.getElementById("resposta");
+      texto.style.display = (texto.style.display === "none") ? "block" : "none";
+    }
+    var respostaEl = document.getElementById("resposta");
+    respostaEl.addEventListener("mouseover", function() {
+      if (respostaEl.style.display === "block") {
+        respostaEl.style.fontSize = "36px";
+        respostaEl.style.textDecoration = "underline";
+      }
+    });
+    respostaEl.addEventListener("mouseout", function() {
+      if (respostaEl.style.display === "block") {
+        respostaEl.style.fontSize = "32px";
+        respostaEl.style.textDecoration = "none";
+      }
+    });
+
+    function mostrarMensagem(opcao) {
+      var texto = document.getElementById("mensagem");
+      switch(opcao) {
+        case 1: texto.innerHTML = "Você terá sorte hoje"; break;
+        case 2: texto.innerHTML = "Seu dia será normal"; break;
+        case 3: texto.innerHTML = "Você receberá um presente de alguém conhecido hoje"; break;
+        default: texto.innerHTML = "";
+      }
+    }
+
+    function mostrarFamilia() {
+      var familia = [
+        ["Samuel", 16, "Filho"],
+        ["Fernando", 43, "Pai"],
+        ["Carolina", 40, "Mãe"],
+        ["João", 80, "Vô"],
+        ["Zelia", 60, "Vó"],
+        ["Luis", 35, "Tio"],
+        ["Juan", 12, "Primo"]
+      ];
+
+      var texto = "";
+      for (var i = 0; i < familia.length; i++) {
+        texto += "Nome: " + familia[i][0] +
+                 " | Idade: " + familia[i][1] +
+                 " | Papel: " + familia[i][2] + "<br>";
+      }
+      document.getElementById("familia").innerHTML = texto;
+      console.log("Botão clicado: mostrarFamilia() executada."); 
+    }
+
+    function mostrarJovens() {
+  var familia = [
+    { nome: "Samuel", idade: 16, papel: "Filho" },
+    { nome: "Fernando", idade: 43, papel: "Pai" },
+    { nome: "Carolina", idade: 40, papel: "Mãe" },
+    { nome: "João", idade: 80, papel: "Vô" },
+    { nome: "Juan", idade: 12, papel: "Primo" }
+  ];
+
+  var i = 0;
+  var texto = "";
+  while (i < familia.length) {
+    if (familia[i].idade < 30) {
+      texto += familia[i].nome + " (" + familia[i].papel + ") tem " + familia[i].idade + " anos<br>";
+    }
+    i++;
+  }
+  document.getElementById("familia").innerHTML = texto;
+}
+  </script>
+</body>
+</html>

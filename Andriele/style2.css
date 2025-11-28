@@ -1,0 +1,80 @@
+
+        body {
+            background-color: #f7bfd8; 
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fdeaf2; 
+        }
+
+        .caixa {
+            background-color: #fbd5e5;
+            color: #000000;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 2px solid #f0a6c9; 
+        }
+
+        .mensagem-especial {
+            color: #c2185b;
+            font-weight: bold;
+        }
+
+        .botao {
+            padding: 10px 14px;
+            background-color: #ff4fa3;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            background-color: #d63384;
+        }
+
+/* Estilos específicos para a imagem da galeria */
+.comida {
+    width: 300px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.casa {
+    width: 300px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.cavalo {
+    width: 300px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.pai {
+    width: 300px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.paii {
+    width: 300px;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

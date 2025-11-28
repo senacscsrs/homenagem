@@ -1,0 +1,247 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte e fundo geral */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #f7f3ff, #ffffff);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container centralizado */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Cabeçalho */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e0d7ff;
+}
+
+.topo .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #6b4bbd;
+}
+
+/* Menu */
+.menu a {
+  margin-left: 16px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #5a4a88;
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.menu a:hover {
+  background: #e8deff;
+  transform: translateY(-1px);
+}
+
+/* Seções */
+.secao {
+  padding: 48px 0;
+}
+
+.destaque {
+  padding-top: 70px;
+}
+
+/* Seção destaque (início) */
+.destaque-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px;
+}
+
+.destaque .texto {
+  flex: 1 1 280px;
+}
+
+.destaque .texto h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #4c3a9f;
+}
+
+.destaque .texto p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.destaque .imagem {
+  flex: 1 1 260px;
+  display: flex;
+  justify-content: center;
+}
+
+.destaque .imagem img {
+  max-width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+}
+
+/* Títulos de seção */
+.titulo-secao {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  color: #4c3a9f;
+}
+
+.subtitulo-secao {
+  text-align: center;
+  font-size: 0.98rem;
+  margin-bottom: 28px;
+  color: #666;
+}
+
+/* Cards de família */
+.cards-familia {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.principal {
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+}
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  color: #4c3a9f;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+/* Fundo suave para a galeria */
+.fundo-suave {
+  background: #f5f1ff;
+}
+
+/* Galeria */
+.grade-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.item-galeria {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.06);
+}
+
+.item-galeria img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.item-galeria figcaption {
+  padding: 8px 10px 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Sobre o site */
+.texto-sobre {
+  max-width: 700px;
+  margin: 0 auto 10px;
+  font-size: 0.98rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Rodapé */
+.rodape {
+  border-top: 1px solid #e0d7ff;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Rolagem suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .topo .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .menu a {
+    margin-left: 0;
+    margin-right: 8px;
+    font-size: 0.9rem;
+  }
+
+  .destaque-conteudo {
+    flex-direction: column-reverse;
+  }
+
+  .destaque .texto h2 {
+    font-size: 1.6rem;
+  }
+}

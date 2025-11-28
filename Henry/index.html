@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Homenagem à Família</title>
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+    :root{
+      --bg:#f3f7fb;
+      --accent:#1e88e5;
+      --accent-dark:#0f62b3;
+      --muted:#555;
+      --card:#ffffff;
+      --orange:#ff7a18;
+    }
+
+    body{background:linear-gradient(180deg,var(--bg),#e9f0fb);color:var(--muted);padding:24px}
+
+    header{max-width:900px;margin:0 auto 20px;padding:24px}
+    h1{color:var(--accent-dark);font-size:2.2rem;margin-bottom:8px}
+    h2{color:var(--accent);font-size:1.4rem;margin-bottom:6px}
+    h3{margin-top:16px;color:var(--accent-dark)}
+
+    .center{display:flex;align-items:center;justify-content:center}
+    .btn{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
+    .btn:hover{background:var(--accent-dark)}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(20,40,80,0.06);margin:10px}
+
+    main{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 320px;gap:18px;align-items:start}
+    @media (max-width:900px){main{grid-template-columns:1fr}}
+
+    .intro p{line-height:1.5;margin-bottom:10px}
+    ul.familia{margin:12px 0 18px 18px}
+    .galeria img{width:100%;border-radius:8px}
+
+    footer{max-width:900px;margin:18px auto;text-align:center;color:#444;padding:12px}
+
+    .muted{color:#666;font-size:0.95rem}
+  </style>
+</head>
+
+<body>
+  <header class="center">
+    <div style="max-width:900px;width:100%">
+      <h1>Família: Nossa Base e Nosso Lar</h1>
+      <h2>Celebrando união, carinho e momentos especiais</h2>
+      <p class="muted">Um espaço dedicado ao afeto e às memórias que fortalecem nossos laços.</p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- COLUNA PRINCIPAL -->
+    <section class="card intro">
+
+      <h3>Sobre a Família</h3>
+      <p>A família é o ponto de partida da nossa história, onde compartilhamos afeto, apoio e momentos inesquecíveis.</p>
+      <p>É nela que aprendemos a importância da união, do cuidado mútuo e da convivência.</p>
+      <p>Mesmo em dias comuns, pequenos gestos tornam cada momento especial.</p>
+
+      <h3>Momentos que Marcam</h3>
+      <ul>
+        <li>Reuniões em datas comemorativas</li>
+        <li>Conversas que ficam na memória</li>
+        <li>Pequenas conquistas compartilhadas</li>
+      </ul>
+
+      <h3>Galeria</h3>
+      <div class="galeria">
+        <img id="foto-principal" src="https://images.pexels.com/photos/3184397/pexels-photo-3184397.jpeg" alt="Família unida">
+      </div>
+
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <button id="btn-toggle-frase" class="btn">Mostrar / Ocultar frase</button>
+        <button id="btn-escolhe" class="btn">Escolher mensagem</button>
+        <button id="btn-add-foto" class="btn">Adicionar foto</button>
+        <button id="btn-troca-cores" class="btn">Trocar cores</button>
+      </div>
+
+      <div style="margin-top:12px;padding:10px;border-radius:8px;background:#fbfdff" id="hover-area">
+        <p id="texto-hover">Passe o mouse aqui para ver uma mensagem especial.</p>
+      </div>
+
+      <p id="frase-especial" style="margin-top:12px;display:none;color:var(--accent-dark);font-weight:700">
+        O amor da família ilumina todos os dias.
+      </p>
+
+    </section>
+
+    <!-- COLUNA LATERAL -->
+    <aside class="card">
+      <h3>Interações</h3>
+      <p class="muted">Explore algumas ações deste espaço.</p>
+
+      <h4>Mensagem Especial</h4>
+      <button id="btn-contador" class="btn">Exibir curiosidades</button>
+
+      <h4 style="margin-top:14px">Mudar cor do texto</h4>
+      <select id="select-cor" style="width:100%;padding:8px;border-radius:8px;margin-top:8px">
+        <option value="">Selecionar cor</option>
+        <option value="blue">Azul</option>
+        <option value="green">Verde</option>
+        <option value="purple">Roxo</option>
+      </select>
+
+      <button id="btn-mudar-cor" class="btn" style="margin-top:8px;width:100%">Aplicar cor</button>
+
+    </aside>
+
+  </main>
+
+  <footer>
+    <p class="muted">Um tributo ao carinho e à importância da convivência familiar.</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const frases = [
+      "A família é nosso primeiro abraço.",
+      "Onde há amor, há lar.",
+      "Pequenos momentos criam grandes memórias."
+    ];
+
+    const btnToggle = document.getElementById('btn-toggle-frase');
+    const frase = document.getElementById('frase-especial');
+
+    btnToggle.addEventListener('click', function(){
+      if (frase.style.display === 'none' || frase.style.display === ''){
+        frase.style.display = 'block';
+      } else {
+        frase.style.display = 'none';
+      }
+    });
+
+    document.getElementById('btn-escolhe').addEventListener('click', function(){
+      const escolha = Math.floor(Math.random() * frases.length);
+      alert(frases[escolha]);
+    });
+
+    document.getElementById('btn-add-foto').addEventListener('click', function(){
+      const galeria = document.querySelector('.galeria');
+      const novaImg = document.createElement('img');
+      novaImg.src = "https://images.pexels.com/photos/3184397/pexels-photo-3184397.jpeg";
+      novaImg.alt = "Família unida";
+      novaImg.style.marginTop = "8px";
+      galeria.appendChild(novaImg);
+    });
+
+    document.getElementById('btn-troca-cores').addEventListener('click', function(){
+      const current = document.body.style.background;
+      if (!current || current.includes('linear-gradient')){
+        document.body.style.background = 'linear-gradient(180deg,#fff7f0,#fff0e6)';
+      } else {
+        document.body.style.background = 'linear-gradient(180deg,var(--bg),#e9f0fb)';
+      }
+    });
+
+    document.getElementById('btn-mudar-cor').addEventListener('click', function(){
+      const sel = document.getElementById('select-cor').value;
+      const area = document.querySelector('main');
+      if (sel === 'blue') area.style.color = 'blue';
+      else if (sel === 'green') area.style.color = 'green';
+      else if (sel === 'purple') area.style.color = 'purple';
+      else area.style.color = '';
+    });
+
+    const hoverArea = document.getElementById('hover-area');
+    const textoHover = document.getElementById('texto-hover');
+
+    hoverArea.addEventListener('mouseover', function(){
+      textoHover.innerText = 'A presença da família torna tudo melhor.';
+      hoverArea.style.background = '#fff9f3';
+    });
+
+    hoverArea.addEventListener('mouseleave', function(){
+      textoHover.innerText = 'Passe o mouse aqui para ver uma mensagem especial.';
+      hoverArea.style.background = '#fbfdff';
+    });
+
+    document.getElementById('btn-contador').addEventListener('click', function(){
+      let i = 1;
+      while (i <= 3){
+        console.log("Curiosidade " + i + ": A família é sempre um ponto de apoio.");
+        i++;
+      }
+      alert("Não importa oque você faça a sua família sempre vai estar com você!");
+    });
+  </script>
+
+</body>
+</html>
