@@ -14,3 +14,4 @@ O objetivo é revisar HTML, CSS e navegação entre páginas, criando um projeto
 - Aplicar os conteúdos trabalhados ao longo do ano.
 
 ---
+https://senacscsrs.github.io/homenagem/
