@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Minha Família - Nosso Tesouro</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>Minha Família: Nossa História e Valores</h1>
+        <p class="paragrafo-destaque">"Família é onde a vida começa e o amor nunca termina."</p>
+    </header>
+    <main class="conteudo-principal">
+        <section class="secao-info">
+            <h2>Quem Faz Parte da Minha Família?</h2>
+            <p>Minha família é o meu alicerce. Cada membro contribui de maneira única para o nosso lar, ensinando-me sobre amor, respeito e resiliência todos os dias.</p>  
+            <h3>Meus Irmãos e Primos</h3>
+            <p>Tenho três irmãos maravilhosos (dois meninos e uma menina) e um primo que considero um irmão. Compartilhamos muitas aventuras e memórias inesquecíveis.</p>
+            <p>Nossos encontros são sempre cheios de risadas, histórias e muita comida boa. É nesses momentos que percebo a força da nossa união.</p>
+            <h4>Coisas que Amamos Fazer Juntos:</h4>
+            <ul class="lista-hobbies">
+                <li>Assistir a filmes e séries juntos.</li>
+                <li>Fazer churrascos nos fins de semana.</li>
+                <li>Viajar e explorar lugares novos.</li>
+                <li>Jogar jogos de tabuleiro e cartas.</li>
+            </ul>
+[Image of a happy family illustration hugging]
+        </section>
+        <hr>
+        <section class="secao-js">
+            <h2>Aplicação dos Conteúdos JavaScript</h2>
+            <h3>1. Mensagem Oculta (IF / ELSE e DOM)</h3>
+            <p id="frase-secreta" style="display: none;">**Esta é uma mensagem especial para a família: Vocês são a minha maior inspiração!**</p>
+            <button id="btn-alternar" onclick="alternarFrase()">Ver/Ocultar Mensagem</button>
+            <h3>2. Mensagem Personalizada (SWITCH)</h3>
+            <p>Escolha um familiar para receber uma mensagem especial:</p>
+            <button onclick="escolherFamiliar('Pai')">Pai</button>
+            <button onclick="escolherFamiliar('Mãe')">Mãe</button>
+            <button onclick="escolherFamiliar('Irmão')">Irmão</button>
+            <button onclick="escolherFamiliar('Madrasta')">Madrasta</button>
+            <button onclick="escolherFamiliar('Primo')">Primo</button>
+            <p id="mensagem-switch" class="mensagem-personalizada">Clique em um familiar acima!</p>
+            <h3>3. Nossa Lista de Nomes (FOR e VETOR)</h3>
+            <ul id="lista-familiares-js">
+                </ul>
+        </section>
+        <hr>
+        <section class="secao-evento">
+            <h3>4. Área de Destaque (Evento e DOM)</h3>
+            <div 
+                id="area-destaque" 
+                class="area-interativa" 
+                onmouseover="destacarArea()" 
+                onmouseout="resetarArea()"
+            >
+                Passe o mouse aqui! O texto e a cor de fundo vão mudar!
+            </div>
+            <p id="texto-evento">O que você achou dessa interação?</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 - Projeto Sábado Letivo - Homenagem à Família</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

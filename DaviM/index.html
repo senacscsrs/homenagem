@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Família Querida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <h1>Uma Homenagem à Minha Família</h1>
+    </header>
+
+    <main>
+        <section class="secao-membros">
+            <h2>As Pessoas Especiais</h2>
+            <p>Minha família é a minha base. Meu pai, <strong>Miguel</strong>, é um grande batalhador e sempre se preocupa comigo. Minha mãe, <strong>Gabriela</strong>, é incrivelmente querida e está sempre atenta a como estou me sentindo.</p>
+            <p>Tenho duas irmãs maravilhosas, a <strong>Bibiana</strong> (a mais velha) e a <strong>Anita</strong>. Conversamos muito e a companhia delas é ótima. Não posso esquecer do <strong>Fiapo</strong>, meu cachorro preferido!</p>
+            <p>Sou muito grato por ter todos eles.</p>
+
+            
+
+            <button id="btn-mensagem">Mostrar/Esconder Mensagem Secreta</button>
+            <p id="mensagem-secreta" class="mensagem-escondida">Vocês são tudo para mim!</p>
+        </section>
+
+        <section class="secao-lista">
+            <h3>Nossos Momentos</h3>
+            <ul id="lista-momentos">
+                </ul>
+        </section>
+
+        <section class="secao-switch">
+            <h3>Mensagem para cada um</h3>
+            <p>Escolha um familiar para ver uma mensagem:</p>
+            <button onclick="mostrarMensagem('Gabriela')">Mãe</button>
+            <button onclick="mostrarMensagem('Miguel')">Pai</button>
+            <button onclick="mostrarMensagem('Bibiana')">Bibiana</button>
+            <button onclick="mostrarMensagem('Anita')">Anita</button>
+            <p id="resultado-switch"></p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

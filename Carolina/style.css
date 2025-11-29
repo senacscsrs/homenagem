@@ -1,0 +1,108 @@
+:root {
+    --cor-fundo-principal: #FBEFEF;
+    --cor-primaria: #8B0000;
+    --cor-secundaria: #A52A2A;
+    --cor-texto-claro: #FFFFFF;
+    --cor-texto-escuro: #333333;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-escuro);
+    margin: 0;
+    padding: 0;
+}
+.cabecalho {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    padding: 20px 0;
+    text-align: center;
+}
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+h2, h3, h4 {
+    color: var(--cor-secundaria);
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+.conteudo-principal {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.secao-info, .secao-js, .secao-evento {
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--cor-secundaria);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+ul {
+    list-style-type: square;
+    margin-left: 25px;
+}
+.paragrafo-destaque {
+    font-style: italic;
+    font-size: 1.2em;
+    color: #F8DCDC;
+    margin-top: 0;
+}
+.mensagem-personalizada {
+    border: 2px dashed var(--cor-secundaria);
+    padding: 10px;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.area-interativa {
+    background-color: #EFEFEF;
+    padding: 30px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #A50000;
+}
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
+    margin-top: 30px;
+}
+#lista-familiares-js li {
+    background-color: #FFF0F0;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 3px;
+}

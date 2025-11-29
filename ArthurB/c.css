@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#EAF2FF;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 80px;
+}
+.titulo {
+    background-color: #1E3A8A;
+    color: #EAF2FF;
+    padding: 15px 20px;
+    font-size: 28px;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+.title{
+    margin: auto;
+    text-align: center;
+    color: #1E3A8A;
+    font-size: 35px
+}
+button {
+    background-color: #EAF2FF;
+    color: #1E3A8A;
+    padding: 34px 40px;
+    border: 2px solid #1E3A8A;
+    border-radius: 12px;
+    font-size: 23px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+}
+button:hover{
+    background-color: #1E3A8A;
+    color: #EAF2FF;
+}
+
+.botao-paginas {
+    position: absolute;
+    bottom: 10px;      
+    right: 20px;      
+    display: flex;  
+    gap: 10px;        
+}
+.botao-paginas button {
+    background-color: transparent;
+    color: white;
+    padding: 18px 22px;
+    border-radius: 12px;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.botao-paginas button:hover {
+    color: #3B82F6;
+}
+.integrantes {
+    display: flex;
+    justify-content: center;
+    gap: 25px;        
+    margin-top: 20px;
+    flex-wrap: wrap;  
+}
+
+.integrantes button {
+    width: 200px;       
+    padding: 20px 0;     
+    font-size: 20px;
+}
+
+#contexto {
+    margin-top: 30px;
+    color: #1E3A8A;
+    font-size: 28px;
+    text-align: center;
+}
+footer {
+    background-color: #1E3A8A;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 25px;
+}

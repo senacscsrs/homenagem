@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homenagem á Família</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="cabecalho-principal">
+        <h1>Minha Família, Meu Tesouro</h1>
+        <img src="image.png" alt="Ilustração de uma família feliz" class="imagem-familia">
+    </header>
+
+    <main class="conteudo-principal">
+        <h2>Nossa História e Memórias</h2>
+
+        <p class="texto-introducao">A família é o nosso primeiro e mais importante círculo social. É onde aprendemos sobre amor, respeito e compartilhamento. É por isso que dedicamos esta página para celebrar os laços que nos unem e as histórias que construímos juntos.</p>
+
+        <p>Cada membro da minha família tem um papel essencial, tornando cada dia uma aventura. Desde as pequenas coisas, como um jantar juntos, até os grandes eventos, como viagens, criamos momentos inesquecíveis.</p>
+
+        <p>Esta página também serve como uma revisão prática e divertida de tudo que aprendemos em JavaScript este ano, aplicando conceitos como `IF/ELSE`, `SWITCH`, `FOR`, `WHILE`, `VETORES`, `MATRIZES` e manipulação do `DOM`.</p>
+
+        <hr>
+
+        <section>
+            <h3>Membros da Família (Lista Gerada por JavaScript)</h3>
+            <ul id="lista-familiares">
+                <li>*Esta lista será preenchida automaticamente pelo JavaScript (loop FOR).*</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h3>Curiosidade Familiar (IF / ELSE)</h3>
+            <button id="btn-curiosidade">Mostrar/Esconder Curiosidade</button>
+            <p id="paragrafo-secreto" style="display: none; color: purple;">**Curiosidade Secreta:** Um de nossos passatempos favoritos é cozinhar juntos aos domingos!</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h3>Mensagem Especial (SWITCH)</h3>
+            <button id="btn-mensagem-switch">Escolha um Familiar para Mensagem</button>
+            <p id="mensagem-switch" class="area-mensagem">Clique no botão acima para escolher e ver uma mensagem!</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h3>Momentos Especiais</h3>
+            <ol id="lista-momentos">
+                <li>Aniversário de 15 Anos.</li>
+                <li>Viagem pro Paraná</li>
+                <li onmouseover="destacar(this)" onmouseout="reverter(this)">O Natal em que nevou (Passe o mouse!).</li>
+            </ol>
+            <p>(O item 3 usa o evento `onmouseover` para mudar a cor do texto).</p>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

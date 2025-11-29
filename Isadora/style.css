@@ -1,0 +1,78 @@
+/* Estilização básica: Cor de fundo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Cor de fundo suave */
+    color: #333; /* Cor da fonte principal */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Classe 1: Para o cabeçalho, com centralização */
+.cabecalho-principal {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px 0;
+    text-align: center; /* Centralizar pelo menos um elemento (o texto do cabeçalho) */
+}
+
+/* Estilização básica: Tamanho de texto */
+h1 {
+    font-size: 2.5em; /* Tamanho do texto para H1 */
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #00796B;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: #00796B;
+}
+
+/* Classe 2: Para o conteúdo principal, organizando com margens e espaçamentos */
+.conteudo-principal {
+    width: 80%;
+    margin: 30px auto; /* Margens e espaçamentos, e centraliza o bloco de conteúdo */
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.imagem-familia {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    /* Centralizar a imagem no cabeçalho */
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Classe 3: Para destacar a área onde o SWITCH exibirá a mensagem */
+.area-mensagem {
+    padding: 15px;
+    border: 2px dashed #FF9800;
+    margin-top: 10px;
+    background-color: #FFF3E0;
+    font-style: italic;
+}
+
+/* Estilização dos botões */
+button {
+    background-color: #E64A19;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #D84315;
+}
