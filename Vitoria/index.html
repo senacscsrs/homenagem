@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Família </title>
+
+  <style>
+    /* CORES */
+    :root{
+      --light-rose: #f8c6d0;
+      --accent: #c76b82;
+      --bg: #fff7f9;
+      --text: #2b2b2b;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+    body{
+      background:linear-gradient(180deg,var(--bg),#fff);
+      color:var(--text);
+      padding:20px;
+    }
+
+    .container{
+      max-width:1000px;
+      margin:20px auto;
+      background:white;
+      border-radius:12px;
+      padding:24px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .box{margin-bottom:22px;padding:18px;border-radius:12px;}
+    .pink-bg{background:var(--light-rose);}
+    .center{text-align:center;}
+    .card{border:1px solid rgba(0,0,0,0.1);}
+    .small{font-size:0.9rem;color:#555;}
+
+    h1{color:var(--accent);}
+    h3{margin-bottom:10px;color:#6b4350;}
+
+    .gallery{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .gallery img{
+      width:200px;
+      height:140px;
+      border-radius:10px;
+      object-fit:cover;
+      border:2px solid #f5d7df;
+    }
+
+    button, select{
+      background:var(--accent);
+      color:white;
+      border:none;
+      padding:8px 12px;
+      border-radius:6px;
+      cursor:pointer;
+      margin-top:8px;
+    }
+
+    button.secondary{background:#666;}
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <header class="box pink-bg center card">
+    <h1>Minha Família </h1>
+    <h2>HTML + CSS + JavaScript</h2>
+    <p class="small">by:Vitória Soder</p>
+  </header>
+
+  <!-- PARÁGRAFOS -->
+  <section class="box">
+    <h3>Sobre o site</h3>
+    <p>Este site apresenta uma galeria, listas automáticas, botões interativos e vários recursos pedidos na atividade.</p>
+    <p>Passe o mouse na frase abaixo:</p>
+
+    <p id="hoverText" class="card center" style="padding:10px;cursor:pointer;">
+      Passe o mouse aqui!
+    </p>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="box">
+    <h3>Galeria</h3>
+    <div class="gallery">
+      <img src="p1.jpeg">
+      <img src="p2.jpeg">
+      <img src="p3.jpeg">
+    </div>
+  </section>
+
+  <!-- LISTAS -->
+  <section class="box">
+    <h3>Listas </h3>
+
+    <h4>Familiares:</h4>
+    <ul id="familyList"></ul>
+
+    <h4>Momentos especiais:</h4>
+    <ol id="momentsList"></ol>
+  </section>
+
+  <!-- SWITCH -->
+  <section class="box">
+    <h3>Mensagem especial</h3>
+    <select id="memberSelect">
+      <option value="pai">Pai</option>
+      <option value="mae">Mãe</option>
+      <option value="irmao">Irmão</option>
+      
+    </select>
+
+    <button id="sendMsgBtn">Enviar mensagem</button>
+    <p id="switchResult" class="small"></p>
+  </section>
+
+  <!-- IF / ELSE -->
+  <section class="box">
+    <h3>Mostrar / Ocultar</h3>
+    <p id="secretText" style="display:none;">Surpresa! Você encontrou o texto secreto!</p>
+    <button id="toggleBtn">Mostrar texto</button>
+  </section>
+
+  <!-- NOVA SEÇÃO (FOTOS DO PAI, MÃE E IRMÃO) -->
+  <section class="box">
+    <h3>Escolha um familiar para ver a foto</h3>
+
+    <select id="selectPessoa">
+      <option value="">-- Escolha --</option>
+      <option value="pai">Pai (Rodrigo)</option>
+      <option value="mae">Mãe (Fernanda)</option>
+      <option value="irmao">Irmão (Vinícius)</option>
+    </select>
+
+    <button id="btnMostrarFoto">Mostrar Foto</button>
+
+    <div id="fotoFamiliar" class="center" style="margin-top:15px;"></div>
+  </section>
+
+  
+
+  <footer class="small center">Projeto completo ❤️</footer>
+</div>
+
+<script>
+  /* ARRAYS */
+  const familyNames = ["Fernada", "Rodrigo", "Vinícius"];
+  const specialMoments = ["Natal", "Aniversário", "Viagem"];
+
+  /* MATRIZ */
+  const familyMatrix = [
+    ["Fernanda", 46],
+    ["Rodrigo", 45],
+    ["Vinícius", 12]
+  ];
+
+  /* OBJETO */
+  const membroObjeto = {
+    nome: "Fernanda",
+    idade: 42,
+    parentesco: "Mãe",
+    hobby: ["Cozinhar"]
+  };
+
+  /* FOR - LISTAS */
+  const familyListEl = document.getElementById("familyList");
+  for(let i=0;i<familyNames.length;i++){
+    familyListEl.innerHTML += `<li>${familyNames[i]}</li>`;
+  }
+
+  const momentsListEl = document.getElementById("momentsList");
+  for(let i=0;i<specialMoments.length;i++){
+    momentsListEl.innerHTML += `<li>${specialMoments[i]}</li>`;
+  }
+
+  /* SWITCH - MENSAGENS */
+  document.getElementById("sendMsgBtn").onclick = function(){
+    const pessoa = document.getElementById("memberSelect").value;
+    const result = document.getElementById("switchResult");
+
+    switch(pessoa){
+      case "pai": result.innerText = "Meu pai é incrível!"; break;
+      case "mae": result.innerText = "Minha mãe é maravilhosa!"; break;
+      case "irmao": result.innerText = "Meu irmão é especial!"; break;
+      default: result.innerText = "Família é tudo!";
+    }
+  };
+
+  /* IF / ELSE - esconder/mostrar */
+  document.getElementById("toggleBtn").onclick = function(){
+    const p = document.getElementById("secretText");
+    if(p.style.display === "none"){
+      p.style.display = "block";
+      this.innerText = "Ocultar";
+    } else {
+      p.style.display = "none";
+      this.innerText = "Mostrar texto";
+    }
+  };
+
+  /* ONMOUSEOVER - mudar texto */
+  document.getElementById("hoverText").onmouseover = function(){
+    this.innerText = "Viu só? Funcionou!";
+  };
+  document.getElementById("hoverText").onmouseout = function(){
+    this.innerText = "Passe o mouse aqui!";
+  };
+
+  /* MOSTRAR FOTO (pai, mãe e irmão) */
+  document.getElementById("btnMostrarFoto").onclick = function(){
+    const pessoa = document.getElementById("selectPessoa").value;
+    const area = document.getElementById("fotoFamiliar");
+
+    switch(pessoa){
+      case "pai":
+        area.innerHTML = `
+          <h3>Rodrigo</h3>
+          <img src="pai.jpeg" style="width:260px;border-radius:12px;">
+          
+        `;
+        break;
+        
+
+      case "mae":
+        area.innerHTML = `
+          <h3>Fernanda</h3>
+          <img src="mae.jpeg" style="width:260px;border-radius:12px;">
+        `;
+        break;
+
+      case "irmao":
+        area.innerHTML = `
+          <h3>Vinícius</h3>
+          <img src="vini.jpeg" style="width:260px;border-radius:12px;">
+        `;
+        break;
+
+      default:
+        area.innerHTML = `<p class="small">Escolha alguém.</p>`;
+    }
+  };
+
+  /* LOG NO CONSOLE */
+  document.getElementById("logDataBtn").onclick = function(){
+    console.log("Matriz:", familyMatrix);
+    console.log("Objeto:", membroObjeto);
+
+    let i = 1;
+    while(i <= 3){
+      console.log("Fato legal", i);
+      i++;
+    }
+  };
+</script>
+
+</body>
+</html>
