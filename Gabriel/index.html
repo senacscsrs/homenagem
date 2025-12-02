@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Família Gabriel</title>
+    <link rel="stylesheet" href="c.css">
+</head>
+
+<body>
+    <header class="titulo">
+        <h1>Gabriel</h1>
+    </header>
+
+    <div class="title">
+        <br>
+        <h2><strong>Introdução</strong></h2>
+        <br>
+        <p>Esse site tem o propósito de apresentar os membros da minha família.</p>
+
+        <br><br>
+
+        <h2><strong>Integrantes</strong></h2>
+
+        <div class="integrantes">
+            <button id="gregori">Grégori</button>
+            <button id="rosa">Rosa</button>
+            <button id="cezar">Cezar</button>
+        </div>
+
+        <br>
+        <h2 id="contexto"></h2>
+    </div>
+
+    <footer>
+        <p>© 2025 – Família Gabriel. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        let resultado = document.querySelector("#contexto");
+
+        function mostrarInfo(texto) {
+            if (resultado) resultado.textContent = texto;
+        }
+
+        const familiares = [
+            { id: "gregori", texto: "meu irmão mais velho se chama Grégori, adoro as histórias que ele conta ou que os outros contam dele, ele sempre me ajuda com meus problemas." },
+            { id: "rosa", texto: "Minha mãe se chama Rosa, me ensinou muita coisa importante e me deu meu maior presente, minha Gata Catarina." },
+            { id: "cezar", texto: "Meu pai se chama Cezar, ele me ensinou a pescar e andar de bicicleta." }
+        ];
+
+        familiares.forEach(item => {
+            const btn = document.querySelector(`#${item.id}`);
+            if (btn) {
+                btn.addEventListener("click", () => mostrarInfo(item.texto));
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+
