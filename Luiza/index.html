@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homenagem à Minha Família</title>
+</head>
+<body>
+
+    <h1>Minha Família</h1>
+
+    <div class="caixa">
+        <h2>Sobre minha família</h2>
+        <p>Minha família é muito importante na minha vida.</p>
+        <p>Este site é uma pequena homenagem usando HTML, CSS e JavaScript.</p>
+        <p>Estou aprendendo programação e quis mostrar o que sei fazer.</p>
+    </div>
+
+    <div class="caixa">
+        <h2>Qualidades da família</h2>
+        <ul>
+            <li>União</li>
+            <li>Amor</li>
+            <li>Respeito</li>
+        </ul>
+    
+
+    <div class="caixa centralizar">
+        <h2>Mensagem especial</h2>
+        <button onclick="mostrarMensagem()">Mostrar mensagem</button>
+        <p id="mensagem" style="display:none; margin-top:10px;">
+            A família é o nosso maior tesouro.
+        </p>
+    </div>
+
+    <div class="caixa">
+        <h2>Escolha um familiar</h2>
+        <select id="escolha">
+            <option value="">Selecione...</option>
+            <option value="mae">Mãe</option>
+            <option value="pai">Pai</option>
+            <option value="irmao">Irmão</option>
+        </select>
+
+        <button onclick="mensagemFamiliar()">Enviar</button>
+    </div>
+
+    <div class="caixa">
+        <h2>Fotossss</h2>
+        <ul id="listaNomes"></ul>
+    </div>
+
+    <button onclick="mostrarFoto()">Escolher familiar</button>
+<img id="fotoFamiliar" width="200">
+<img id="fotoFamiliar2" width="200">
+<img id="fotoFamiliar3" width="200">
+<img id="fotoFamiliar4" width="200">
+<img id="fotoFamiliar5" width="200">
+<img id="fotoanimais" width="200">
+<img id="fotoanimais2" width="200">
+<img id="fotoanimais3" width="200">
+<img id="fotoanimais4" width="200">
+<img id="fotoanimais5" width="200">
+<img id="fotoanimais6" width="200">
+</div>
+
+
+    <script>
+
+function mostrarFoto() {
+    let escolha = prompt("Digite: mãe, pai, irmão ou animais");
+
+    switch(escolha) {
+        case "mãe":
+            document.getElementById("fotoFamiliar").src = "Mamis.jpeg";
+            break;
+
+        case "pai":
+            document.getElementById("fotoFamiliar").src = "papis.jpeg";
+            document.getElementById("fotoFamiliar2").src = "papis2.jpeg";
+            document.getElementById("fotoFamiliar3").src = "papis3.jpeg";
+            break;
+
+        case "irmão":
+            document.getElementById("fotoFamiliar4").src = "lucas.jpeg";
+            document.getElementById("fotoFamiliar5").src = "lucas2.jpeg";
+            break;
+
+            case "animais":
+            document.getElementById("fotoanimais").src = "cinza.jpeg";
+            document.getElementById("fotoanimais2").src = "gatinho1.jpeg";
+            document.getElementById("fotoanimais3").src = "gatinho2.jpeg";
+            document.getElementById("fotoanimais4").src = "gatinho3.jpeg";
+            document.getElementById("fotoanimais5").src = "molly.jpeg";
+            document.getElementById("fotoanimais6").src = "luna.jpeg";
+            break;
+
+        default:
+            alert("Opção inválida!");
+    }
+}
+
+        // FOR – mostrar nomes no HTML
+        for (let i = 0; i < familiares.length; i++) {
+            document.getElementById("listaNomes").innerHTML += "<li>" + familiares[i] + "</li>";
+        }
+
+        // IF / ELSE – mostrar mensagem
+        function mostrarMensagem() {
+            const msg = document.getElementById("mensagem");
+
+            if (msg.style.display === "none") {
+                msg.style.display = "block";
+            } else {
+                msg.style.display = "none";
+            }
+        }
+
+        // SWITCH – mensagens para familiares
+        function mensagemFamiliar() {
+            let pessoa = document.getElementById("escolha").value;
+            let texto = "";
+
+            switch (pessoa) {
+                case "mae":
+                    texto = "Mãe, obrigado por todo amor!";
+                    break;
+
+                case "pai":
+                    texto = "Pai, você é meu exemplo!";
+                    break;
+
+                case "irmao":
+                    texto = "Irmão, obrigado pela amizade!";
+                    break;
+
+                default:
+                    texto = "Escolha alguém!";
+            }
+
+            alert(texto);
+        }
+
+        // MATRIZ
+        const matriz = [
+            ["Mãe", 45],
+            ["Pai", 47],
+            ["Irmão", 16]
+        ];
+        console.log("Matriz da família:", matriz);
+
+        // OBJETO
+        const mae = {
+            nome: "Mãe",
+            qualidade: "carinhosa"
+        };
+        console.log("Objeto:", mae);
+
+        // WHILE – contador simples
+        let contador = 0;
+        while (contador < 3) {
+            console.log("Contagem WHILE:", contador);
+            contador++;
+        }
+    </script>
+
+</body>
+</html>
